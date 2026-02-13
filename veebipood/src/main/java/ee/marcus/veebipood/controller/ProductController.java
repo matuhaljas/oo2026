@@ -16,12 +16,23 @@ public class ProductController {
 //        return "Hello World";
 //    }
 
+    //1xx informatiivne
+    //2xx õnnestumine
+    //3xx redirect
+    //4xx päringu tegija viga (client error / frontend error)
+    //5xx päringu vastaja viga (server error)
+
     @Autowired
     private ProductRepository productRepository;
 
     @GetMapping("products")
     public List<Product> getProducts(){
         return productRepository.findAll();
+    }
+
+    @GetMapping("products/{id}")
+    public Product getOneProducts(@PathVariable Long id){
+        return productRepository.findById(id).orElseThrow();
     }
 
     @DeleteMapping("products/{id}")
@@ -32,6 +43,21 @@ public class ProductController {
 
     @PostMapping("products/{id}")
     public List<Product> addProduct(@RequestBody Product product){
+        if (product.getId()!=null) {
+            throw new RuntimeException("Can not add with ID");
+        }
+        productRepository.save(product);
+        return productRepository.findAll();
+    }
+
+    @PutMapping("products/{id}")
+    public List<Product> editProduct(@RequestBody Product product){
+        if (product.getId()==null) {
+            throw new RuntimeException("Can not edit without ID");
+        }
+        if (!productRepository.existsById(product.getId())) {
+            throw new RuntimeException("Product ID does not exist");
+        }
         productRepository.save(product);
         return productRepository.findAll();
     }
