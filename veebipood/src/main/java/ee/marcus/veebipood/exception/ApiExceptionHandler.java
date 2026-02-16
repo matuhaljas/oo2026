@@ -1,4 +1,4 @@
-package exception;
+package ee.marcus.veebipood.exception;
 
 
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,7 @@ import java.util.Date;
 public class ApiExceptionHandler {
 
     @ExceptionHandler
-    public ResponseEntity<ErrorMessage> handleExeption(RuntimeException ex) {
+    public ResponseEntity<ErrorMessage> handleException(RuntimeException ex) {
         ErrorMessage errorMessage = new ErrorMessage();
         errorMessage.setMessage(ex.getMessage());
         errorMessage.setStatus(HttpStatus.BAD_REQUEST.value());

@@ -1,4 +1,4 @@
-package exception;
+package ee.marcus.kodutoo2.exception;
 
 import lombok.Data;
 

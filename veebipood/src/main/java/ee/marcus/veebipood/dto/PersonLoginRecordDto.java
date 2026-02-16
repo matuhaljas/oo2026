@@ -1,7 +1,7 @@
 package ee.marcus.veebipood.dto;
 
-public record PersonLoginRecordDto() {
-    String email,
-    String password
-
+public record PersonLoginRecordDto(
+        String email,
+        String password
+) {
 }

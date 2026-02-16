@@ -1,4 +1,4 @@
-package service;
+package ee.marcus.veebipood.service;
 
 import ee.marcus.veebipood.entity.Person;
 import org.springframework.stereotype.Service;
@@ -20,10 +20,10 @@ public class PersonService {
         if (person.getId() != null) {
             throw new RuntimeException("Cannot sign up with ID");
         }
-        if (person.getEmail() != null) {
-            throw new RuntimeException("Cannot siGN UP WITH EMPTY EMAIL");
+        if (person.getEmail() == null) {
+            throw new RuntimeException("Cannot sign up with empty email");
         }
-        if (person.getPersonalCode() != null) {
+        if (person.getPersonalCode() == null) {
             throw new RuntimeException("Cannot sign up with empty personal code");
         }
         if (!isValid(person.getEmail())) {
