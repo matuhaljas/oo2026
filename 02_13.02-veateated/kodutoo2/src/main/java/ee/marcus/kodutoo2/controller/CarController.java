@@ -24,6 +24,22 @@ public class CarController {
         if (car.getId()!=null) {
             throw new RuntimeException("Can not add with ID");
         }
+
+        if (car.getBrand() == null || car.getBrand().isBlank()) {
+            throw new RuntimeException("Car make is required");
+        }
+
+        if (car.getModel() == null || car.getModel().isBlank()) {
+            throw new RuntimeException("Car model is required");
+        }
+
+        if (car.getYear() < 1886) {
+            throw new RuntimeException("Year must be 1886 or newer"); // esimene auto
+        }
+
+        if (car.getPrice() <= 0) {
+            throw new RuntimeException("Price must be greater than 0");
+        }
         carRepository.save(car); //siin salvestab
         return carRepository.findAll(); //tagastab koik andmebaasis
     }

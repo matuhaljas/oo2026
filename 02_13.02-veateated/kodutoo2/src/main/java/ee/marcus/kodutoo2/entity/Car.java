@@ -21,4 +21,5 @@ public class Car {
     private String brand;
     private String model;
     private Long year;
+    private Long price;
 }
