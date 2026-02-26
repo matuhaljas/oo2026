@@ -1,7 +1,16 @@
 package ee.marcus.decathlon.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Tulemus {
 
@@ -11,5 +20,6 @@ public class Tulemus {
     private int punktid;
 
     @ManyToOne
+    @JsonIgnore
     private Sportlane sportlane;
 }

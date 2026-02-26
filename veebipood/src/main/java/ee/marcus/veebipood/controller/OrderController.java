@@ -5,7 +5,6 @@ import ee.marcus.veebipood.entity.Order;
 import ee.marcus.veebipood.repository.OrderRepository;
 import ee.marcus.veebipood.service.OrderService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
