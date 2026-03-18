@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@CrossOrigin(origins= "*") // paris arenduses * ei kasutaks
+
 @RestController
 public class ProductController {
 
@@ -41,7 +43,7 @@ public class ProductController {
         return productRepository.findAll();
     }
 
-    @PostMapping("products/{id}")
+    @PostMapping("products")
     public List<Product> addProduct(@RequestBody Product product){
         if (product.getId()!=null) {
             throw new RuntimeException("Can not add with ID");

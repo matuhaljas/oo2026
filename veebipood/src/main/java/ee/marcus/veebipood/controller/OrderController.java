@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 @RestController
 public class OrderController {
 

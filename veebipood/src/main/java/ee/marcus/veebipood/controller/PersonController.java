@@ -9,6 +9,7 @@ import ee.marcus.veebipood.service.PersonService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class PersonController {
 
