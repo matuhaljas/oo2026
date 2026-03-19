@@ -4,20 +4,17 @@ import ee.marcus.decathlon.entity.Sportlane;
 import ee.marcus.decathlon.entity.Tulemus;
 import ee.marcus.decathlon.repository.SportlaneRepository;
 import ee.marcus.decathlon.repository.TulemusRepository;
-import ee.marcus.decathlon.service.SportlaneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class SportlaneController {
 
     @Autowired
     private SportlaneRepository sportlaneRepository;
-
-    @Autowired
-    private SportlaneService sportlaneService;
 
     @Autowired
     private TulemusRepository tulemusRepository;
@@ -38,6 +35,12 @@ public class SportlaneController {
                 .stream()
                 .mapToInt(Tulemus::getPunktid)
                 .sum();
+    }
+
+    @DeleteMapping("athletes/{id}")
+    public List<Sportlane> deleteSportlane(@PathVariable Long id) {
+        sportlaneRepository.deleteById(id); // kustutan
+        return sportlaneRepository.findAll(); // uuenenud seis
     }
 
     @PostMapping("athletes")
