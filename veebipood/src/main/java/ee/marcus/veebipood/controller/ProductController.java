@@ -4,9 +4,10 @@ import ee.marcus.veebipood.entity.Product;
 import ee.marcus.veebipood.repository.ProductRepository;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page; //!!!!!!!
-import org.springframework.data.domain.Pageable; //!!!!!!!
+import org.springframework.data.domain.Page;  // !!!!!!!!!!!!!
+import org.springframework.data.domain.Pageable; // !!!!!!!!!!!!!
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @CrossOrigin(origins = "*") // turvaviga, päris arendustes seda ei teeks
