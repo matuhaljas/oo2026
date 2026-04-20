@@ -25,17 +25,12 @@ public class SportlaneController {
     @GetMapping("athletes/{id}")
     public Sportlane getSportlane(@PathVariable Long id) { return sportlaneRepository.findById(id).orElseThrow(); }
 
+    /*
     @GetMapping("athletes/{id}/total")
     public int getTotalPoints(@PathVariable Long id){
-
-        Sportlane sportlane = sportlaneRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Athlete not found"));
-
-        return sportlane.getTulemused()
-                .stream()
-                .mapToInt(Tulemus::getPunktid)
-                .sum();
+        return sportlaneRepository.findAll();
     }
+     */
 
     @DeleteMapping("athletes/{id}")
     public List<Sportlane> deleteSportlane(@PathVariable Long id) {

@@ -20,6 +20,9 @@ public class Tulemus {
     private int punktid;
 
     @ManyToOne
+    private Spordiala spordiala;
+
+    @ManyToOne
     @JsonIgnore
     private Sportlane sportlane;
 }
