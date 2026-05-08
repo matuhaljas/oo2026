@@ -23,6 +23,5 @@ public class Tulemus {
     private Spordiala spordiala;
 
     @ManyToOne
-    @JsonIgnore
     private Sportlane sportlane;
 }

@@ -55,4 +55,10 @@ public class TulemusController {
 
         return tulemus;
     }
+
+    @DeleteMapping("tulemused/{id}")
+    public List<Tulemus> deleteTulemus(@PathVariable Long id) {
+        tulemusRepository.deleteById(id); // kustutan
+        return tulemusRepository.findAll(); // uuenenud seis
+    }
 }

@@ -12,6 +12,7 @@ import SajaMeetriJooks from './pages/alad/SajaMeetriJooks'
 import Teivashupe from './pages/alad/Teivashupe'
 import Tokkejooks from './pages/alad/Tokkejooks'
 import TuhandeViiesajaJooks from './pages/alad/TuhandeViiesajaJooks'
+import LisaTulemused from './pages/LisaTulemused'
 
 function App() {
 
@@ -23,6 +24,9 @@ function App() {
       </Link>
       <Link to="/manage-sportlased">
         <button>Manage Sportlased</button>
+      </Link>
+      <Link to="/add-tulemus">
+        <button>Lisa tulemus</button>
       </Link>
       <Link to="/kaugushupe">
         <button>Kaugushüpe</button>
@@ -59,6 +63,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <HomePage /> } />
         <Route path="/manage-sportlased" element={ <ManageSportlased /> } />
+        <Route path="/add-tulemus" element={ <LisaTulemused /> } />
         <Route path="/kaugushupe" element={ <KaugusHupe /> } />
         <Route path="/kettaheide" element={ <Kettaheide /> } />
         <Route path="/korgushupe" element={ <KorgusHupe /> } />

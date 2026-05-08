@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 public class TulemusDto {
     private int punktid;
-    private Long sportlaneId;
     private Long spordialaId;
+    private Long sportlaneId;
 }

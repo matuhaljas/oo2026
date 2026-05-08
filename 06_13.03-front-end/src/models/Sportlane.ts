@@ -1,5 +1,7 @@
+import type { Riik } from "./Riik"
+
 export type Sportlane = {
-    id?: number,
+    id: number,
     name: string,
-    country: string
+    country: Riik
 }

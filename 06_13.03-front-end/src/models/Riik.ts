@@ -1,4 +1,4 @@
 export type Riik = {
-    id?: number,
+    id: number,
     name: string
 }
